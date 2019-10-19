@@ -1,24 +1,32 @@
 *{
-    background-color: white;
+    /* background-color: white; */
     color: black;
     padding: 0;
     margin: 0;
     font-size: 12px;
+    box-sizing: border-box;
 }
 
 body {
-    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-    /* background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
-    padding-top: 10rem;
+    /* background-image: linear-gradient(to top, #c1dfc4 0%, #95ba92 100%); */
+    /* background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    /* padding-top: 30rem; */
+    /* background-color: #A8BFAC; */
+    height: 100%;
 }
 
 h1 {
     /* transform: rotate(20deg) translateY(130px); */
     border-radius: 10px 10px 0 0;
-    color: black;
-    font-size: 100px;
+    color: rgb(169, 110, 110);
+    font-size: 10vh;
     text-align: center;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1:hover {
+    text-decoration: underline rgb(169, 110, 110);    
 }
 
 h2 {
@@ -39,4 +47,41 @@ h2 {
 
 .card:hover {
     box-shadow: 5px 5px 10px grey;
+    height: 50rem;
+}
+
+.land {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: none;
+}
+
+.qr-code {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    height: 20vh;
+}
+
+.qr-code:hover {
+    height: 40vh;
+}
+
+header, footer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animation {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-visualization {
+    position: absolute;
+    height: 100%;
+    left: 100%;
 }
