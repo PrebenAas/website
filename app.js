@@ -57,12 +57,12 @@ let canvas = c.canvas;
 let vertices = [];
 
 // Effect Properties
-let vertexCount = 7000;
-let vertexSize = 2;
-let oceanWidth = 204;
-let oceanHeight = -100;
-let gridSize = 32;
-let waveSize = 18;
+let vertexCount = 3000;
+let vertexSize = 3;
+let oceanWidth = 154;
+let oceanHeight = -200;
+let gridSize = 64;
+let waveSize = 15;
 let perspective = 200;
 
 // Common variables
