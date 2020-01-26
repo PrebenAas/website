@@ -1,38 +1,77 @@
-<!DOCTYPE html>
 <html Lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="/style.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/nb.js"></script>
         <title>Faggrupper</title>
     </head>
 
     <body class="faggrupper">
-        <div class="date-logo">
-            <div>
-                <h2>13. januar / kl. 16:30-19:00</h2>
-            </div>
+        <div>
+            <h2 class="date-logo">
+                <!-- <h2 id="displayMoment" onload="tid()"></h2> -->
+            </h2>
             <div>
                 <img class="logo" src="/assets/soprasterialogo.svg" alt="Sopra Steria logo">
             </div>
         </div>
         <img class="logo-mobile" src="/assets/soprasterialogo.svg" alt="Sopra Steria logo">
-        <h4 class="fagruppe">Interaksjonsdesign</h4>
-        <div class="date-mobile">
-            <h2>13. januar</h2>
-            <h2>kl. 16:30-19:00</h2>
-        </div>
-        <div class="theme">
-            <h2>Tema:</h2>
-                <div class="theme-text">
-                    EasyAll - "En praktisk miniguide i universell utforming" ved Ingeborg Tande Johnsen, konseptdesigner i Halogen. 
-                    <br/><br/>
-                    Guri og Malin kommer for å dele erfaringer fra prosjektet deres "Arbeidsplassen.no" i NAV.</h5>
-                </div>
-        </div>
-        <div class="next-event">
-            <h2 class="color">Neste arrangement:</h2>
-            <h2  class="color">Kick-off - 17. januar </h2>
-        </div>
+        <h4 class="faggruppe"></h4>
+        <div class="date-mobile"></div>
+        <h2 class="theme"></div>
+
+        <h2 class="next-event">
+            <h2 class="color">Neste arrangement:
+                <h2 class="next-event-title"></h2>
+                <h2 class="next-event-date"></h2>
+            </h2>
+        </h2>
     </body>
+    <!-- <script src="/faggruppe.js"></script> -->
+    <!-- <script type="text/javascript" src="innhold.json"></script> -->
+    <script>
+
+    let data = 
+        { "events": [
+            {
+                "start": "2020-02-04T16:30",
+                "end": "2020-02-04T19:00",
+                "title": "Grafisk design",
+                "description": "Agenda kommer..",
+            },
+            {
+                "start": "2020-02-06T16:30",
+                "end": "2020-02-06T19:00",
+                "title": "Avdelingsmøte design",
+                "description": "Velkommen til avdelingsmøte! Agenda kommer så snart den er satt. Hilsen Ingunn",
+            }
+        ]
+    }
+
+    let now = new Date();
+    let pickedEvent = data["events"][0];
+    let nextEvent = data["events"][1];
+    
+    for (let event of data["events"]){
+        if (now > event.end){
+            continue;
+        }
+        if (event.start < pickedEvent.start){
+            pickedEvent = event;
+        }
+        if (event.start > nextEvent.start) {
+            nextEvent = event;
+        }
+    }
+    
+    document.querySelector(".faggruppe").innerText = pickedEvent.title;
+    document.querySelector(".date-mobile").innerText = moment(pickedEvent.start).format('LLL');
+    document.querySelector(".date-logo").innerText = moment(pickedEvent.start).format('LLL') + "-" + moment(pickedEvent.end).format('LT');
+    document.querySelector(".theme").innerText = pickedEvent.description;
+
+    document.querySelector(".next-event-title").innerText = nextEvent.title;
+    document.querySelector(".next-event-date").innerText = moment(nextEvent.start).calendar();
+    </script>
 </html>
