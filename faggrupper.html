@@ -60,30 +60,75 @@
     };
 
     let now = new Date();
-    let pickedEvent = data["events"][0];
-    let nextEvent = data["events"][1];
-
-    for (let event of data["events"]) {
-      if (now > event.end) {
-        continue;
-      }
-      if (event.start < pickedEvent.start) {
-        pickedEvent = event;
-      }
-      if (event.start > nextEvent.start) {
-        nextEvent = event;
-      }
+    function isOver(event) {
+      return now > event.end;
     }
 
-    document.querySelector(".faggruppe").innerText = pickedEvent.title;
+    function pickNext(events, exclude) {
+      // The same algorithm (function) is used to pick both first and next
+      // It can be described as:
+      // Do not pick the event sent as exclude argument, or any event before
+      // Always prefer events which are not done
+      // Prefer events that are closer to current time
+      //
+      // Handles a few edge cases, like:
+      // - If there are 0 events, pick nothing (return null)
+      // - If there is 1 event, it will be the first event and no next
+      // - If all events are done, first event will be the one which started
+      //   last and next will be null
+      let bestSoFar = null;
+      for (let event of events) {
+        if (
+          exclude != null &&
+          (exclude === event || event.start < exclude.start)
+        ) {
+          // Skip the excluded (previously picked) event, and all events
+          // before it.
+        } else if (bestSoFar === null) {
+          // If we haven't picked anything, pick this event
+          // (the first event as long as there are more than 0)
+          bestSoFar = event;
+        } else if (isOver(event) && !isOver(bestSoFar)) {
+          // if this event has ended and the one we picked hasn't
+          // skip this one
+        } else if (!isOver(event) && isOver(bestSoFar)) {
+          // if this event has not ended and the one we picked has
+          // pick this one instead
+          bestSoFar = event;
+        } else if (
+          isOver(event) &&
+          isOver(bestSoFar) &&
+          event.start > bestSoFar.start
+        ) {
+          // If both events are over and this one started later,
+          // pick this one
+          bestSoFar = event;
+        } else if (
+          !isOver(event) &&
+          !isOver(bestSoFar) &&
+          event.start < bestSoFar.start
+        ) {
+          // If both events are not over and this one starts before,
+          // pick this one
+          bestSoFar = event;
+        }
+      }
+      return bestSoFar;
+    }
+
+    let events = data["events"];
+    let firstEvent = pickNext(events, null);
+    let nextEvent = pickNext(events, firstEvent);
+
+    document.querySelector(".faggruppe").innerText = firstEvent.title;
     document.querySelector(".date-mobile").innerText = moment(
-      pickedEvent.start
+      firstEvent.start
     ).format("LLL");
     document.querySelector(".date-logo").innerText =
-      moment(pickedEvent.start).format("LLL") +
+      moment(firstEvent.start).format("LLL") +
       "-" +
-      moment(pickedEvent.end).format("LT");
-    document.querySelector(".theme").innerText = pickedEvent.description;
+      moment(firstEvent.end).format("LT");
+    document.querySelector(".theme").innerText = firstEvent.description;
 
     document.querySelector(".next-event-title").innerText = nextEvent.title;
     document.querySelector(".next-event-date").innerText = moment(
