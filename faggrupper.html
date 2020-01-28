@@ -138,19 +138,23 @@
     let firstEvent = pickNext(events, null);
     let nextEvent = pickNext(events, firstEvent);
 
-    document.querySelector(".faggruppe").innerText = firstEvent.title;
-    document.querySelector(".date-mobile").innerText = moment(
-      firstEvent.start
-    ).format("LLL");
-    document.querySelector(".date-logo").innerText =
-      moment(firstEvent.start).format("LLL") +
-      "-" +
-      moment(firstEvent.end).format("LT");
-    document.querySelector(".theme").innerText = firstEvent.description;
+    if (firstEvent != null) {
+      document.querySelector(".faggruppe").innerText = firstEvent.title;
+      document.querySelector(".date-mobile").innerText = moment(
+        firstEvent.start
+      ).format("LLL");
+      document.querySelector(".date-logo").innerText =
+        moment(firstEvent.start).format("LLL") +
+        "-" +
+        moment(firstEvent.end).format("LT");
+      document.querySelector(".theme").innerText = firstEvent.description;
+    }
 
-    document.querySelector(".next-event-title").innerText = nextEvent.title;
-    document.querySelector(".next-event-date").innerText = moment(
-      nextEvent.start
-    ).calendar();
+    if (nextEvent != null) {
+      document.querySelector(".next-event-title").innerText = nextEvent.title;
+      document.querySelector(".next-event-date").innerText = moment(
+        nextEvent.start
+      ).calendar();
+    }
   </script>
 </html>
