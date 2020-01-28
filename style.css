@@ -34,16 +34,12 @@ body {
     width: 3rem;
 }
 
-.date-mobile {
-    display: none;
-}
-
 .theme {
-    margin-top: 8rem;
+    margin-top: 5rem;
 }
 
 .date-logo {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 2px white;
@@ -51,9 +47,8 @@ body {
 
 .logo-absolute-right{
     position: absolute;
-    right: 5%; /* Matches .faggrupper padding */
+    right: 5%;
 }
-
 
 h1 {
     border-radius: 10px 10px 0 0;
@@ -74,11 +69,18 @@ h4 {
 h5 {
     color: white;
     font-size: 4vh;
+}
 
+h6 {
+    color: grey;
+    font-size: 3rem;
+    margin-bottom: 1rem;    
 }
 
 .next-event {
     margin-top: 10rem;
+    bottom: 5rem;
+    position: absolute;
     color: grey;
 }
 
@@ -235,9 +237,11 @@ canvas {
         display: none;
     }
 
-    .date-mobile {
+    .date {
         margin-top: 1rem;
         display: inline-block;
+        color: white;
+        font-size: 3vh;
     }
 
     .theme {
@@ -248,9 +252,19 @@ canvas {
         font-size: 3vh;
     }
 
+    .logo {
+        display: none;
+    }
+
     .next-event {
-        margin-top: 5rem;
-        font-size: 2rem;    
+        margin-top: 0rem;
+        bottom: 3rem;
+        position: absolute;
+    }
+
+    h6 {
+        color:grey;
+        font-size: 3vh;
     }
     
     h2 {
