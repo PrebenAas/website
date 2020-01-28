@@ -139,22 +139,27 @@
     let nextEvent = pickNext(events, firstEvent);
 
     if (firstEvent != null) {
-      document.querySelector(".faggruppe").innerText = firstEvent.title;
-      document.querySelector(".date-mobile").innerText = moment(
-        firstEvent.start
-      ).format("LLL");
-      document.querySelector(".date-logo").innerText =
-        moment(firstEvent.start).format("LLL") +
-        "-" +
-        moment(firstEvent.end).format("LT");
-      document.querySelector(".theme").innerText = firstEvent.description;
+      let faggruppe = document.querySelector(".faggruppe");
+      faggruppe.innerText = firstEvent.title;
+
+      let date_mobile = document.querySelector(".date-mobile");
+      date_mobile.innerText = moment(firstEvent.start).format("LLL");
+
+      let date_logo = document.querySelector(".date-logo");
+      let start = moment(firstEvent.start).format("LLL");
+      let end = moment(firstEvent.end).format("LT");
+      date_logo.innerText = start + "-" + end;
+
+      let theme = document.querySelector(".theme");
+      theme.innerText = firstEvent.description;
     }
 
     if (nextEvent != null) {
-      document.querySelector(".next-event-title").innerText = nextEvent.title;
-      document.querySelector(".next-event-date").innerText = moment(
-        nextEvent.start
-      ).calendar();
+      let next_event_title = document.querySelector(".next-event-title");
+      next_event_title.innerText = nextEvent.title;
+
+      let next_event_date = document.querySelector(".next-event-date");
+      next_event_date.innerText = moment(nextEvent.start).calendar();
     }
   </script>
 </html>
