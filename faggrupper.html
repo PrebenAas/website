@@ -67,6 +67,8 @@
       ]
     };
 
+    var intervalID = window.setInterval(tid, 5000);
+
     let now = new Date();
     function isOver(event) {
       return now > event.end;

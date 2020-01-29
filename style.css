@@ -257,9 +257,7 @@ canvas {
     }
 
     .next-event {
-        margin-top: 0rem;
-        bottom: 3rem;
-        position: absolute;
+        display: none;
     }
 
     h6 {
