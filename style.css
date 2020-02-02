@@ -1,278 +1,311 @@
-*{
-    padding: 0;
-    margin: 0;
-    font-size: 12px;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
-    height: 100%;
+  height: 100%;
 }
 
 .information {
-    padding: 10%;
+  padding: 10rem;
 }
 
-.whatido {
-    margin-top: 5%;
-    margin-right: 20%;
+.project {
+  padding: 10rem;
+}
+
+.project-intro {
+  background-color: whitesmoke;
+  padding: 2rem;
+}
+
+.preample {
+  margin-top: 5rem;
+  margin-right: 20rem;
 }
 
 .faggrupper {
-    background-color: black;
-    height: 100%;
-    padding: 5% 5% 0% 5%;
+  background-color: black;
+  height: 100%;
+  padding: 5rem 5rem 0rem 5rem;
 }
 
 .faggruppe {
-    overflow-wrap: break-word; 
+  overflow-wrap: break-word;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .logo {
-    margin-top: 1rem;
-    width: 3rem;
+  margin-top: 1rem;
+  width: 3rem;
 }
 
 .theme {
-    margin-top: 5rem;
+  margin-top: 5rem;
 }
 
 .date-logo {
-    margin-bottom: 4rem;
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 0px 2px white;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 2px white;
 }
 
-.logo-absolute-right{
-    position: absolute;
-    right: 5%;
+.logo-absolute-right {
+  position: absolute;
+  right: 5%;
 }
 
 h1 {
-    border-radius: 10px 10px 0 0;
-    color:black;
-    font-size: 5vh;   
+  border-radius: 10px 10px 0 0;
+  color: 212121;
+  font-size: 5vh;
 }
 
 h3 {
-    color:grey;
-    font-size: 2vh;
+  color: grey;
+  font-size: 2vh;
 }
 
 h4 {
-    color:white;
-    font-size: 10vh;
+  color: white;
+  font-size: 10vh;
 }
 
 h5 {
-    color: white;
-    font-size: 4vh;
+  color: black;
+  font-size: 3vh;
 }
 
 h6 {
-    color: grey;
-    font-size: 3rem;
-    margin-bottom: 1rem;    
+  color: grey;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .next-event {
-    margin-top: 10rem;
-    bottom: 5rem;
-    position: absolute;
-    color: grey;
+  margin-top: 10rem;
+  bottom: 5rem;
+  position: absolute;
+  color: grey;
 }
 
 .sticky + .body {
-    padding-top: 102px;
+  padding-top: 102px;
 }
 
 h2 {
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 1rem;    
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 p {
-    font-size: 30px;
-    color: grey;
-    padding: 0 10% 0 0;
+  font-size: 30px;
+  color: grey;
+  padding: 0 0 0 0;
 }
 
 .theme-text {
-    font-size: 30px;
-    color: white;
-    padding: 0 0 0 0;
+  font-size: 30px;
+  color: white;
+  padding: 0 0 0 0;
 }
-    
+
 a {
-    font-size: 30px;
-    padding: 0 0 0 0;
-    color: black;
+  font-size: 30px;
+  padding: 0 0 0 0;
+  color: black;
 }
 
 a:link {
-    background-color: transparent;
-    text-decoration: none;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 a:hover {
-    color: black;
-    background-color: transparent;
-    text-decoration: underline;
+  color: white;
+  background-color: 212121;
+  text-decoration: none;
 }
 
 .card {
-    border-radius: 10px;
-    background-color: white;
-    max-width: 50rem;
-    height: 50rem;
-    margin-left: auto;
-    margin-right: auto;
+  border-radius: 10px;
+  background-color: white;
+  max-width: 50rem;
+  height: 50rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card:hover {
-    box-shadow: 5px 5px 10px grey;
-    height: 50rem;
+  box-shadow: 5px 5px 10px grey;
+  height: 50rem;
 }
 
 .land {
-    margin-left: auto;
-    margin-right: auto;
-    background-color: none;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: none;
 }
 
 .qr-code {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    height: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  height: 10vh;
 }
 
 .qr-code:hover {
-    height: 20vh;
+  height: 20vh;
 }
 
 .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
-  }
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
 header {
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 2px;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 2px;
 }
 
 .headerText {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .logo-mobile {
-    display: none;
+  display: none;
 }
 
 footer {
-    display: flex;
-    align-items: center;
-    position:fixed;
-    width: 100%;
-    bottom:0;
-    padding: 0 0 10% 10%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 0 0 5rem 10rem;
 }
 
 .full-height {
-    height: 100vh;
+  height: 100vh;
 }
 
 .animation {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .process-visualization {
-    position: absolute;
-    height: 100%;
-    left: 100%;
+  position: absolute;
+  height: 100%;
+  left: 100%;
 }
 
 .date-logo-mobile {
-    display: none;
+  display: none;
 }
 
 canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index:-1;
- }
-
- .color {
-    color: grey;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
- /* FOR MOBILE */
+.color {
+  color: grey;
+}
+
+/* FOR MOBILE */
 @media screen and (max-width: 1024px) {
-    p {
-        font-size: 30px;
-        color: grey;
-        padding: 0 0 0 0;
-    }
+  p {
+    font-size: 30px;
+    color: grey;
+    padding: 0 0 0 0;
+  }
 
-    .whatido {
-        margin-top: 10%;
-        margin-right: 10%;
-    }
+  .project {
+    padding: 2rem;
+  }
 
-    .faggrupper {
-        padding: 10%;
-    }
+  footer {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 0 0 3rem 3rem;
+  }
 
-    .date-logo {
-        display: none;
-    }
+  .information {
+    padding: 3rem;
+  }
 
-    .date {
-        margin-top: 1rem;
-        display: inline-block;
-        color: white;
-        font-size: 3vh;
-    }
+  .preample {
+    margin-top: 2rem;
+    margin-right: 0;
+  }
 
-    .theme {
-        margin-top: 5rem;
-    }
+  .faggrupper {
+    padding: 4rem;
+  }
 
-    .theme-text {
-        font-size: 3vh;
-    }
+  .date-logo {
+    display: none;
+  }
 
-    .logo {
-        display: none;
-    }
+  .date {
+    margin-top: 1rem;
+    display: inline-block;
+    color: white;
+    font-size: 3vh;
+  }
 
-    .next-event {
-        display: none;
-    }
+  .theme {
+    margin-top: 5rem;
+  }
 
-    h6 {
-        color:grey;
-        font-size: 3vh;
-    }
-    
-    h2 {
-        color:white;
-        font-size: 3vh;
-    }
+  .theme-text {
+    font-size: 3vh;
+  }
 
-    h4 {
-        color:white;
-        font-size: 4vh;
-    }
+  .logo {
+    display: none;
+  }
 
+  .next-event {
+    display: none;
+  }
+
+  h6 {
+    color: grey;
+    font-size: 3vh;
+  }
+
+  h2 {
+    color: white;
+    font-size: 3vh;
+  }
+
+  h4 {
+    color: white;
+    font-size: 4vh;
+  }
 }
