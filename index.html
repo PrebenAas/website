@@ -2,50 +2,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
     <title>Preben Aas</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <div class="information">
-      <p>I'm</p>
+      <p>Hi! I'm</p>
       <h1>Preben Aas</h1>
+      <p class="preample">
+        I help companies design & build better services that people like to use.
+      </p>
 
-      <p class="preample">
-        a designer and community manager at
-        <a href="https://www.soprasteria.no" target="_blank">Sopra Steria</a>. I
-        love
-        <a
-          href="https://open.spotify.com/track/4tLD8Kpq8TxGEu0srRUXVn?si=E1h5fStZQcCkgW1iELZIqQ"
-          target="_blank"
+      <div class="external-links">
+        <div
+          class="button"
+          onclick="window.location.href='https:linkedin.com/in/prebenaas/';"
         >
-          making music</a
+          LinkedIn
+        </div>
+
+        <div
+          class="button"
+          onclick="window.location.href='https:notion.so/prebenaas/Portfolio-6946b8a7313c45df8866a47a2669f6f5';"
         >
-        and experimenting with
-        <a class="code" href="https://github.com/PrebenAas" target="_blank"
-          >code</a
-        >.
-      </p>
-      <p class="preample">
-        ↳
-        <a
-          href="https://www.notion.so/prebenaas/Portfolio-6946b8a7313c45df8866a47a2669f6f5"
-          target="_blank"
-          >go to portfolio & CV</a
-        >
-      </p>
-      <i class="fas fa-external-link-alt"></i>
-      <p>
-        ↳
-        <a href="https://faggrupper.prebenaas.com" target="_blank"
-          >comunity page
-        </a>
-      </p>
+          Portfolio
+        </div>
+      </div>
     </div>
   </body>
 
   <footer>
-    <h3>© 2020, and forever evolving</h3>
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="80px"
+        height="60px"
+        viewBox="5 0 80 60"
+      >
+        <path
+          id="wave"
+          fill="none"
+          stroke="#262626"
+          stroke-width="4"
+          stroke-linecap="round"
+        ></path>
+      </svg>
+    </div>
+    <script src="/JS/wave.js"></script>
+    <h2>2020</h2>
   </footer>
-  <script src="/app.js"></script>
 </html>
