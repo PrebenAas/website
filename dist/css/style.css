@@ -1,12 +1,10 @@
-$primary: #f3eee2;
-
 * {
   padding: 0;
   margin: 0;
   font-size: 12px;
   box-sizing: border-box;
   font-family: "DM Sans", sans-serif;
-  background-color: $primary;
+  background-color: #f3eee2;
 }
 
 body {
@@ -28,8 +26,7 @@ body {
   margin-right: 1rem;
   padding: 1rem;
   width: 15rem;
-
-  background: $primary;
+  background: #f3eee2;
   color: black;
   box-sizing: border-box;
   border: 2px solid black;
@@ -37,12 +34,10 @@ body {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-
-  &:hover {
-    background: black;
-    color: white;
-    // border: black solid;
-  }
+}
+.button:hover {
+  background: black;
+  color: white;
 }
 
 .project-intro {
@@ -95,7 +90,19 @@ svg {
 
 #wave {
   stroke-dasharray: 0 16 101 16;
-  animation: moveTheWave 4000ms linear infinite;
+  -webkit-animation: moveTheWave 4000ms linear infinite;
+          animation: moveTheWave 4000ms linear infinite;
+}
+
+@-webkit-keyframes moveTheWave {
+  0% {
+    stroke-dashoffset: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    stroke-dashoffset: -133;
+    transform: translate3d(-90px, 0, 0);
+  }
 }
 
 @keyframes moveTheWave {
@@ -103,13 +110,11 @@ svg {
     stroke-dashoffset: 0;
     transform: translate3d(0, 0, 0);
   }
-
   100% {
     stroke-dashoffset: -133;
     transform: translate3d(-90px, 0, 0);
   }
 }
-
 footer {
   display: flex;
   align-items: center;
@@ -161,7 +166,6 @@ footer {
     margin-right: 4rem;
   }
 }
-
 @media screen and (max-width: 425px) {
   body {
     padding: 4%;
@@ -202,4 +206,4 @@ footer {
     margin-top: 2rem;
     margin-right: 2rem;
   }
-}
+}/*# sourceMappingURL=style.css.map */
